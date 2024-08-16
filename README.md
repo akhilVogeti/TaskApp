@@ -26,20 +26,20 @@ This project is a MERN stack project that helps a registered user perform CRUD o
 In the backend,
 
 1. Auth
-    * POST /api/auth/register: Registers a new user and returns status code 201 on success or 400 with error message. 
-    * POST /api/auth/login: Authenticates a user and returns an authentication token.
+    * ```POST /api/auth/register```: Registers a new user and returns status code 201 on success or 400 with error message. 
+    * ```POST /api/auth/login```: Authenticates a user and returns an authentication token.
     
 2. Tasks
-    * GET /api/tasks: Retrieves a list of all tasks.
-    * POST /api/tasks: Creates a new task.
-    * PUT /api/tasks/:id: Updates an existing task by ID.
-    * DELETE /api/tasks/:id: Deletes a task by ID.
+    * ```GET /api/tasks```: Retrieves a list of all tasks.
+    * ```POST /api/tasks```: Creates a new task.
+    * ```PUT /api/tasks/:id```: Updates an existing task by ID.
+    * ```DELETE /api/tasks/:id```: Deletes a task by ID.
 
 3. The frontend routes are
-    * http://localhost:5173/: Landing page.
-    * http://localhost:5173/register: Register page.
-    * http://localhost:5173/login: Login page.
-    * http://localhost:5173/home: Home page with all tasks.
+    * ```http://localhost:5173/```: Landing page.
+    * ```http://localhost:5173/register```: Register page.
+    * ```http://localhost:5173/login```: Login page.
+    * ```http://localhost:5173/home```: Home page with all tasks.
 
 
 ## Output
