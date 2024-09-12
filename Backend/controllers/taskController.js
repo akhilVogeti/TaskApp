@@ -3,6 +3,7 @@ const Task = require('../models/Task');
 
 // Create a task
 exports.createTask = async (req, res) => {
+  console.log('in create task');
   const { title, description, completed } = req.body;
   try {
     const task = new Task({ title, description, completed, user: req.user.id });
@@ -15,6 +16,7 @@ exports.createTask = async (req, res) => {
 
 // Get all tasks
 exports.getTasks = async (req, res) => {
+  console.log('in get all task');
   try {
     const tasks = await Task.find({ user: req.user.id });
     res.json(tasks);
@@ -25,6 +27,7 @@ exports.getTasks = async (req, res) => {
 
 // Update a task
 exports.updateTask = async (req, res) => {
+  console.log('in update task');
   const { id } = req.params;
   const { title, description, completed } = req.body;
   try {
@@ -38,6 +41,7 @@ exports.updateTask = async (req, res) => {
 
 // Delete a task
 exports.deleteTask = async (req, res) => {
+  console.log('in delete task');
   const { id } = req.params;
   try {
     const task = await Task.findOneAndDelete({ _id: id, user: req.user.id });

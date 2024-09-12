@@ -27,16 +27,18 @@ const Register = () => {
   };
 
   return (
-    <div className='register-block'>
-      <h2>Welcome to Task Manager</h2>
-      <form className='register-form' onSubmit={handleSubmit}>
-        <h2>Register</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-zinc-900 text-gray-200">
+      <h2 className="text-3xl font-bold mb-10">Welcome to Task Manager</h2>
+      <form className="flex flex-col items-center w-full max-w-sm bg-zinc-800 border border-zinc-600 p-8 rounded-lg shadow-xl space-y-6"
+       onSubmit={handleSubmit}>
+        <h2 className="text-2xl font-bold mb-5">Enter details to register</h2>
         <input
           type="text"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
+          className="w-full px-4 py-2 mb-4 bg-zinc-700 text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="email"
@@ -44,6 +46,7 @@ const Register = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className="w-full px-4 py-2 mb-4 bg-zinc-700 text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="password"
@@ -51,12 +54,13 @@ const Register = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className="w-full px-4 py-2 mb-4 bg-zinc-700 text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <button type="submit">Register</button>
-        {error && <p>{error}</p>}
+        <button type="submit" className="w-40 mt-4 px-4 py-2 bg-blue-800 text-white rounded hover:bg-blue-600">Register</button>
+        {error && <p className="text-red-500 mt-4">{error}</p>}
       </form>
-      <p>Existing user? Login here</p>
-      <Link to="/login">Login</Link>
+      <p className="mt-4 text-gray-400">Existing user? Login here</p>
+      <Link to="/login" className="underline hover:text-gray-400">Login</Link>
     </div>
 
 

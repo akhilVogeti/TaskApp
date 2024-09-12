@@ -1,57 +1,30 @@
+// TaskList.jsx
+import React from 'react';
+import TaskCard from './TaskCard';
 
-import React, { useEffect, useState } from 'react';
-import { getTasks, deleteTask, updateTask } from '../../api';
-
-const TaskList = () => {
-  const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  
-
-  useEffect(() => {
-    const fetchTasks = async () => {
-      const token = localStorage.getItem('token');
-      try {
-        const response = await getTasks(token);
-        setTasks(response.data);
-      } catch (err) {
-        console.error('Failed to fetch tasks');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTasks();
-  }, []);
-
-  const handleDelete = async (id) => {
-    const token = localStorage.getItem('token');
-    try {
-      await deleteTask(id, token);
-      setTasks(tasks.filter((task) => task._id !== id));
-    } catch (err) {
-      console.error('Failed to delete task');
-    }
-  };
-
-  
-
-  if (loading) return <p>Loading...</p>;
+const TaskList = ({ tasks, deleteTask, updateTask }) => {
+  const columns = [[], [], [], []];
+  tasks.forEach((task, index) => {
+    columns[index % 4].push(task);
+  });
 
   return (
-    <div>
-      <h2>Your Tasks</h2>
-      <ul>
-        {tasks.map((task) => (
-          <li key={task._id}>
-            <h3>{task.title}</h3>
-            <p>{task.description}</p>
-            <p>{task.completed ? 'Completed' : 'Not Completed'}</p>
-            <button onClick={() => handleDelete(task._id)}>Delete</button>
-            <button onClick={() => handleUpdate(task._id)}>Edit</button>
-          </li>
-        ))}
+   //<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 ">
 
-      </ul>
+    <div className="grid grid-cols-4 gap-4 p-4">
+      {columns.map((columnTasks, columnIndex) => (
+        <div key={columnIndex} className="flex flex-col gap-5">
+          {columnTasks.map((task) => (
+          <TaskCard
+            key={task._id}
+            task={task}
+            deleteTask={deleteTask}
+            updateTask={updateTask}
+          />
+      
+        ))}
+        </div>
+      ))}
     </div>
   );
 };
