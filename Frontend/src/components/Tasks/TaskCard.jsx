@@ -27,20 +27,20 @@ const TaskCard = ({ task, deleteTask, updateTask, onSave, onCancel, isNew }) => 
   return (
     <>
       {isEditing ? (
-        <div className="bg-gray-800 text-gray-200 pt-0 mb-2 rounded-lg shadow-lg p-4 flex flex-col w-full max-w-md ">
-          <p className="mt-1 text-xl">Enter new task's details</p>
+        <div className="bg-gray-200 text-gray-900 pt-0 mb-2 rounded-lg shadow-lg p-4 flex flex-col w-full max-w-md ">
+          <p className="mt-1 text-xl">Enter details</p>
           <input
             type="text"
             value={editedTask.title}
             onChange={(e) => setEditedTask({ ...editedTask, title: e.target.value })}
             placeholder="Task title"
-            className="w-full mt-2 p-2 mb-2 rounded border border-gray-600 bg-gray-700 text-gray-200"
+            className="w-full mt-2 p-2 mb-2 rounded border border-gray-600 bg-gray-300 text-gray-900"
           />
           <textarea
             value={editedTask.description}
             onChange={(e) => setEditedTask({ ...editedTask, description: e.target.value })}
             placeholder="Task Description"
-            className="w-full p-2 mb-2 rounded border border-gray-600 bg-gray-700 text-gray-200 max-h-32 overflow-auto"
+            className="w-full p-2 mb-2 rounded border border-gray-600 bg-gray-300 text-gray-900 max-h-32 overflow-auto"
             
           />
           <div className="mt-2 flex justify-between items-center">
@@ -55,9 +55,9 @@ const TaskCard = ({ task, deleteTask, updateTask, onSave, onCancel, isNew }) => 
           </div>
         </div>
       ) : (
-        <div className="bg-gray-800 text-gray-200 pt-0 rounded-lg shadow-lg ">
+        <div className="bg-gray-200 text-gray-900 pt-0 rounded-lg border border-gray-500 shadow-xl ">
           
-           <div className=" px-4 bg-gray-700 rounded-lg flex justify-between items-center ">
+           <div className=" px-4 bg-gray-300 rounded-lg flex justify-between items-center ">
               <button onClick={() => handleDeleteClick(task._id)} >
                 <FaRegTrashAlt />
               </button>
@@ -78,7 +78,7 @@ const TaskCard = ({ task, deleteTask, updateTask, onSave, onCancel, isNew }) => 
               checked={task.completed}
               onChange={() => handleCheckboxChange(task._id)}   
             />
-            <p className={` px-2 ${task.completed ? 'text-green-500' : 'text-red-500'}`}>
+            <p className={` px-2 font-bold ${task.completed ? 'text-green-600' : 'text-red-600'}`}>
             {task.completed ? 'Completed' : 'Not Completed'}
             </p>
           </div>

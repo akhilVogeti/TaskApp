@@ -70,7 +70,7 @@ const HomePage = () => {
   
 
   return (
-    <div className="min-h-screen bg-zinc-900 text-gray-200" >
+    <div className="min-h-screen text-gray-900 " >
       <div className="flex justify-between items-center">
         <button onClick={handleAddTaskClick} className="flex items-center space-x-2 p-4">
           <FaPlusCircle />
