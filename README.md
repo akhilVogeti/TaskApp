@@ -45,27 +45,27 @@ In the backend,
 ## Output
 1. The landing page
 
-![Landing page](screenshots/landingPage.png)
+![Landing page](screenshots/improved-ui/welcome-ui.png)
 
 2. Register
 
-![Register](screenshots/Register.png)
+![Register](screenshots/improved-ui/register-ui.png)
 
 3. login
 
-![login](screenshots/login.png)
+![login](screenshots/improved-ui/login-ui.png)
 
 4. home after successful login showing all your tasks and a task form to add/update tasks.
 
-![home](screenshots/home.png)
+![home](screenshots/improved-ui/dashboard-ui.png)
 
 5. Click on Edit of any of the tasks in the list to update it.
 
-![edit](screenshots/edit.png)
+![edit](screenshots/improved-ui//edit-ui.png)
 
-6. Click on Delete to delete a task. 
+6. Click on Add Task to add a task. 
 
-![delete](screenshots/delete.png)
+![add](screenshots/improved-ui/create-ui.png)
 
 ## Contribute to the project
 To contribute to the project, follow these steps:
